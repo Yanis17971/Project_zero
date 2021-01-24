@@ -2,15 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+        <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
     </head>
     <body>
-        <h1>РОБИНС БАСКИН</h1>
-        <h2>Список сортов мороженноого</h2>
+        <div class="container">
+            <h1>РОБИНС БАСКИН</h1>
+            <h2>Список сортов мороженноого</h2>
 
-        <p>
-            {{ icecreams | safe }}
-        </p>
-
-        <a href="/">На главную</a>
+            <p>
+                {{ icecreams | safe }}
+            </p>
+            <div class="alert alert-info" role="alert">
+                <a href="/">На главную</a>
+            </div>
+        </div>
     </body>
 </html>
