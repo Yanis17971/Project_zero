@@ -3,10 +3,14 @@ from django.http import HttpResponse
 from .models import icecream_db
 
 def icecream_list(request):
-    icecreams = ''
+    icecreamss = []
     for i in range(len(icecream_db)):
-        icecreams += f"<a href='{i}'>{icecream_db[i]['name']}</a><br>"
-    context = {"icecreams": icecreams}
+        icecreams = icecream_db[i]
+        icecreams["index"]=i
+        
+        icecreamss.append(icecreams)
+        #icecreams += f"<a href='{i}'>{icecream_db[i]['name']}</a><br>"
+    context = {"icecreams": icecreamss}
     return render(request, "icecream/icecream-list.html", context)
 
 def icecream_dtl(request,pk):

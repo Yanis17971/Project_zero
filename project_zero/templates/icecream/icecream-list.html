@@ -12,9 +12,24 @@
             <h1>РОБИНС БАСКИН</h1>
             <h2>Список сортов мороженноого</h2>
 
-            <p>
-                {{ icecreams | safe }}
-            </p>
+            {% for i in icecreams %}
+            <div class="card" style="width:18rem "> 
+                <img src="{{ i.img }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{i.name}}
+                    </h5>
+                    <p class="card-text">
+                        {{ i.description }}
+                    </p>
+                    <a class="btn btn-primary" href="{{ i.index }}">
+                        Подробнее
+                    </a>
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+           
             <div class="alert alert-info" role="alert">
                 <a href="/">На главную</a>
             </div>
